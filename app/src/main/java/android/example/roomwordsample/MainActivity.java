@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
+            String name = data.getStringExtra(NewWordActivity.EXTRA_REPLY_NAME);
+            String number = data.getStringExtra(NewWordActivity.EXTRA_REPLY_NUMBER);
+            Word word = new Word(name,number);
             mWordViewModel.insert(word);
         } else {
             Toast.makeText(

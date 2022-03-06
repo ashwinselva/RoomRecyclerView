@@ -14,6 +14,15 @@
         android:inputType="textAutoComplete"
         android:layout_margin="16dp"
         android:textSize="18sp" />
+    <EditText
+        android:id="@+id/edit_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:hint="Word..."
+        android:inputType="textAutoComplete"
+        android:layout_margin="16dp"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/button_save"

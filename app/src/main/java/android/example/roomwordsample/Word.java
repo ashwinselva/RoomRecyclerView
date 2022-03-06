@@ -8,15 +8,35 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "word_table")
 public class Word {
 
-    @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "word")
-    private String mWord;
-    public Word(@NonNull String word){
-        this.mWord = word;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    @ColumnInfo(name = "name")
+    public String name;
+
+    @ColumnInfo(name = "number")
+    public String number;
+
+    public Word(@NonNull String name, String number){
+        this.name = name;
+        this.number = number;
     }
 
+    public int getId(){
+        return this.id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+
     public String getWord(){
-        return this.mWord;
+        return this.name;
+    }
+
+    public String getNumber(){
+        return this.number;
     }
 }
