@@ -9,8 +9,7 @@
         android:id="@+id/edit_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:hint="Word..."
+        android:hint="Student's Name(Required)"
         android:inputType="textAutoComplete"
         android:layout_margin="16dp"
         android:textSize="18sp" />
@@ -18,8 +17,7 @@
         android:id="@+id/edit_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:hint="Word..."
+        android:hint="Student's Phone Number(Optional)"
         android:inputType="textAutoComplete"
         android:layout_margin="16dp"
         android:textSize="18sp" />

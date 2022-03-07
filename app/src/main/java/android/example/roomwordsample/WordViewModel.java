@@ -11,7 +11,7 @@ import java.util.List;
 public class WordViewModel extends AndroidViewModel {
 
     private WordRepository mRepository;
-    private final LiveData<List<Word>> mAllWords;
+    private LiveData<List<Word>> mAllWords;
 
     public WordViewModel(@NonNull Application application) {
         super(application);
@@ -25,5 +25,11 @@ public class WordViewModel extends AndroidViewModel {
 
     public void insert(Word word){
         mRepository.insert(word);
+    }
+
+
+    LiveData<List<Word>> getFilter(String query) {
+        mAllWords = mRepository.mySearch(query);
+        return mAllWords;
     }
 }

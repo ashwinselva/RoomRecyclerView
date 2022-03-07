@@ -1,13 +1,15 @@
 package android.example.roomwordsample;
 
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
-public class WordListAdapter extends ListAdapter<Word, WordViewHolder> {
-
+public class WordListAdapter extends ListAdapter<Word, WordViewHolder>  {
+    WordViewModel viewModel;
 
     protected WordListAdapter(@NonNull DiffUtil.ItemCallback<Word> diffCallback) {
         super(diffCallback);
@@ -24,6 +26,7 @@ public class WordListAdapter extends ListAdapter<Word, WordViewHolder> {
         Word current = getItem(position);
         holder.bind(current.getWord(), current.getNumber());
     }
+
 
     static class WordDiff extends DiffUtil.ItemCallback<Word>{
 

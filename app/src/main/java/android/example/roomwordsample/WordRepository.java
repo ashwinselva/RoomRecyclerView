@@ -24,4 +24,9 @@ public class WordRepository {
             mWordDao.insert(word);
         });
     }
+
+    LiveData<List<Word>> mySearch(String query){
+        mAllWords= mWordDao.mSearch(query);
+        return mAllWords;
+    }
 }

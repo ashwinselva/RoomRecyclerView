@@ -18,4 +18,9 @@ public interface WordDao{
 
     @Query("SELECT * FROM word_table ORDER BY name ASC")
     LiveData<List<Word>> getAlphabetizedWords();
+
+    @Query("SELECT * FROM word_table where name LIKE  '%'||:query||'%'" +
+            "OR number LIKE  '%'||:query||'%' ")
+    LiveData<List<Word>> mSearch(String query);
 }
+
